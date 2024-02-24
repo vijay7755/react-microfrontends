@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 export default () => {
   const ref = useRef(null);
   const history = useHistory();
+  console.log("useHistory in marketing: ", history)
 
   console.log("marketing app mounted")
 

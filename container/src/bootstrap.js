@@ -1,5 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import { useHistory } from "react-router-dom";
 
-ReactDOM.render(<App />, document.querySelector('#root'));
+// const history = useHistory();
+// console.log("history: ", history);
+
+ReactDOM.render(<App history={useHistory} />, document.querySelector("#root"));

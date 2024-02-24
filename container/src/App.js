@@ -17,9 +17,10 @@ const generateClassName = createGenerateClassName({
 export default () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
 
-  const handleSignIn = () => {
-    console.log("signed in successfully");
+
+  const handleSignIn = (history) => {
     setIsSignedIn(true);
+    if(history.push) history.push("/")
   };
 
   return (
@@ -29,6 +30,7 @@ export default () => {
           <Header
             isSignedIn={isSignedIn}
             onSignOut={() => setIsSignedIn(false)}
+            handleSignIn={handleSignIn}
           />
           <Suspense fallback={<Progress />}>
             <Switch>

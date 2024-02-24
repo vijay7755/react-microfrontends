@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link as RouterLink } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -54,14 +55,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Header({ isSignedIn, onSignOut }) {
+export default function Header({ isSignedIn, onSignOut, handleSignIn }) {
   const classes = useStyles();
+  const history = useHistory()
 
   const onClick = () => {
     if (isSignedIn && onSignOut) {
       onSignOut();
     }
   };
+
+  useEffect(() => {
+    if(isSignedIn) handleSignIn(history)
+  }, [isSignedIn])
 
   return (
     <React.Fragment>
