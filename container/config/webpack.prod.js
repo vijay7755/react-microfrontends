@@ -15,7 +15,8 @@ const prodConfig = {
         new ModuleFederationPlugin({
             name: "container",
             remotes: {
-                marketing: `marketing@${domain}/marketing/latest/remoteEntry.js` // "/marketing/latest" is the s3 bucket storage path 
+                marketing: `marketing@${domain}/marketing/latest/remoteEntry.js`, // "/marketing/latest" is the s3 bucket storage path 
+                auth: `auth@${domain}/auth/latest/remoteEntry.js`, // "/marketing/latest" is the s3 bucket storage path
             },
             shared: packageJson.dependencies
         })
