@@ -16,7 +16,8 @@ const prodConfig = {
             name: "container",
             remotes: {
                 marketing: `marketing@${domain}/marketing/latest/remoteEntry.js`, // "/marketing/latest" is the s3 bucket storage path 
-                auth: `auth@${domain}/auth/latest/remoteEntry.js`, // "/marketing/latest" is the s3 bucket storage path
+                auth: `auth@${domain}/auth/latest/remoteEntry.js`, // "/auth/latest" is the s3 bucket storage path
+                dashboard: `dashboard@${domain}/dashboard/latest/remoteEntry.js`, // "/dashboard/latest" is the s3 bucket storage path
             },
             shared: packageJson.dependencies
         })
